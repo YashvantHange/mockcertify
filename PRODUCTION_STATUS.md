@@ -46,7 +46,15 @@ Browser tab: [Deploy blueprint](https://dashboard.render.com/blueprint/new?repo=
 
 Sign in with GitHub → approve blueprint. `CLIENT_URL` is preset in `render.yaml`.
 
-## Admin login
+## Test accounts
 
-- Email: `admin@certprep.local`
-- Password: `Admin123!@#` (or your local `ADMIN_PASSWORD`)
+| Account | Email | Password | Role |
+|---------|--------|----------|------|
+| **Admin (seed)** | `admin@certprep.local` | `Admin123!@#` | ADMIN |
+| **New signup** | any valid email (8+ char password) | you choose | USER |
+
+Run automated auth checks:
+
+```bash
+node scripts/test-auth-production.mjs
+```
