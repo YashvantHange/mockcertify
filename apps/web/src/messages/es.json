@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "categories": "Categorías",
+    "pricing": "Precios",
+    "dashboard": "Panel",
+    "login": "Iniciar sesión",
+    "signup": "Registrarse",
+    "logout": "Cerrar sesión"
+  },
+  "hero": {
+    "title": "Domina tus exámenes de certificación",
+    "subtitle": "Pruebas de práctica, exámenes cronometrados y análisis para AWS, Azure, Security+ y más.",
+    "cta": "Empezar gratis",
+    "secondary": "Ver certificaciones"
+  }
+}

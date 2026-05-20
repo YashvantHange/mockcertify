@@ -1,0 +1,11 @@
+cert: sc-200
+exam_code: SC-200
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  mitigate-threats: { target: 175, drafted: 0, reviewed: 0, imported: 0 }
+  manage-incidents: { target: 150, drafted: 0, reviewed: 0, imported: 0 }
+  hunting-response: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  security-ops: { target: 75, drafted: 0, reviewed: 0, imported: 0 }

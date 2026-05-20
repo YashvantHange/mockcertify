@@ -1,0 +1,15 @@
+cert: cissp
+exam_code: CISSP
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  security-risk: { target: 75, drafted: 0, reviewed: 0, imported: 0 }
+  asset-security: { target: 50, drafted: 0, reviewed: 0, imported: 0 }
+  security-architecture: { target: 65, drafted: 0, reviewed: 0, imported: 0 }
+  communication-network: { target: 65, drafted: 0, reviewed: 0, imported: 0 }
+  iam: { target: 65, drafted: 0, reviewed: 0, imported: 0 }
+  security-assessment: { target: 60, drafted: 0, reviewed: 0, imported: 0 }
+  security-operations: { target: 65, drafted: 0, reviewed: 0, imported: 0 }
+  software-security: { target: 55, drafted: 0, reviewed: 0, imported: 0 }

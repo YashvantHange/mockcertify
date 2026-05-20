@@ -1,0 +1,104 @@
+{
+  "slug": "sc-200",
+  "examCode": "SC-200",
+  "name": "Microsoft Security Operations Analyst",
+  "provider": "Microsoft",
+  "officialGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-200",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://learn.microsoft.com/security/",
+    "https://learn.microsoft.com/credentials/certifications/security-operations-analyst/"
+  ],
+  "domains": [
+    {
+      "slug": "mitigate-threats",
+      "name": "Mitigate Threats Using Microsoft Security Solutions",
+      "weightPercent": 35,
+      "objectives": [
+        {
+          "id": "MT-1",
+          "description": "Mitigate threats using Microsoft Defender XDR"
+        },
+        {
+          "id": "MT-2",
+          "description": "Configure endpoint protection and EDR"
+        },
+        {
+          "id": "MT-3",
+          "description": "Investigate and remediate identity threats"
+        },
+        {
+          "id": "MT-4",
+          "description": "Protect cloud workloads with Defender for Cloud"
+        }
+      ]
+    },
+    {
+      "slug": "manage-incidents",
+      "name": "Manage Security Incidents in Microsoft Sentinel",
+      "weightPercent": 30,
+      "objectives": [
+        {
+          "id": "MI-1",
+          "description": "Design and configure Sentinel workspaces"
+        },
+        {
+          "id": "MI-2",
+          "description": "Create analytics rules and automation"
+        },
+        {
+          "id": "MI-3",
+          "description": "Investigate incidents and use KQL"
+        },
+        {
+          "id": "MI-4",
+          "description": "Manage threat intelligence and hunting"
+        }
+      ]
+    },
+    {
+      "slug": "hunting-response",
+      "name": "Perform Threat Hunting and Response",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "HR-1",
+          "description": "Conduct proactive threat hunting"
+        },
+        {
+          "id": "HR-2",
+          "description": "Use advanced hunting and notebooks"
+        },
+        {
+          "id": "HR-3",
+          "description": "Coordinate incident response workflows"
+        }
+      ]
+    },
+    {
+      "slug": "security-ops",
+      "name": "Implement Security Operations Best Practices",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "SO-1",
+          "description": "Configure security baselines and policies"
+        },
+        {
+          "id": "SO-2",
+          "description": "Manage security operations reporting"
+        },
+        {
+          "id": "SO-3",
+          "description": "Integrate third-party security tools"
+        }
+      ]
+    }
+  ]
+}

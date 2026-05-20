@@ -1,0 +1,119 @@
+{
+  "slug": "cka",
+  "examCode": "CKA",
+  "name": "Certified Kubernetes Administrator",
+  "provider": "CNCF",
+  "officialGuideUrl": "https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.31.pdf",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://kubernetes.io/docs/",
+    "https://www.cncf.io/certification/cka/"
+  ],
+  "domains": [
+    {
+      "slug": "storage",
+      "name": "Storage",
+      "weightPercent": 10,
+      "objectives": [
+        {
+          "id": "ST-1",
+          "description": "Implement storage classes and PVs"
+        },
+        {
+          "id": "ST-2",
+          "description": "Configure persistent volume claims"
+        }
+      ]
+    },
+    {
+      "slug": "workloads",
+      "name": "Workloads & Scheduling",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "WL-1",
+          "description": "Deploy and manage deployments, daemonsets, statefulsets"
+        },
+        {
+          "id": "WL-2",
+          "description": "Configure resource requests and limits"
+        },
+        {
+          "id": "WL-3",
+          "description": "Use ConfigMaps and Secrets"
+        }
+      ]
+    },
+    {
+      "slug": "services-networking",
+      "name": "Services & Networking",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "SN-1",
+          "description": "Configure Services and Ingress"
+        },
+        {
+          "id": "SN-2",
+          "description": "Implement network policies"
+        },
+        {
+          "id": "SN-3",
+          "description": "Use CoreDNS and troubleshoot networking"
+        }
+      ]
+    },
+    {
+      "slug": "cluster-architecture",
+      "name": "Cluster Architecture, Installation & Configuration",
+      "weightPercent": 25,
+      "objectives": [
+        {
+          "id": "CA-1",
+          "description": "Manage RBAC and service accounts"
+        },
+        {
+          "id": "CA-2",
+          "description": "Perform cluster upgrades"
+        },
+        {
+          "id": "CA-3",
+          "description": "Install and configure clusters"
+        },
+        {
+          "id": "CA-4",
+          "description": "Manage etcd backups"
+        }
+      ]
+    },
+    {
+      "slug": "troubleshooting",
+      "name": "Troubleshooting",
+      "weightPercent": 30,
+      "objectives": [
+        {
+          "id": "TR-1",
+          "description": "Troubleshoot application failures"
+        },
+        {
+          "id": "TR-2",
+          "description": "Troubleshoot control plane components"
+        },
+        {
+          "id": "TR-3",
+          "description": "Troubleshoot worker node failures"
+        },
+        {
+          "id": "TR-4",
+          "description": "Troubleshoot networking issues"
+        }
+      ]
+    }
+  ]
+}

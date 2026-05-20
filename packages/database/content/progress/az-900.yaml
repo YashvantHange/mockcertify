@@ -1,0 +1,11 @@
+cert: az-900
+exam_code: AZ-900
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  cloud-concepts: { target: 125, drafted: 0, reviewed: 0, imported: 0 }
+  azure-architecture: { target: 175, drafted: 0, reviewed: 0, imported: 0 }
+  azure-management: { target: 150, drafted: 0, reviewed: 0, imported: 0 }
+  azure-governance: { target: 50, drafted: 0, reviewed: 0, imported: 0 }

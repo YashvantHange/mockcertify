@@ -1,0 +1,111 @@
+{
+  "slug": "oscp",
+  "examCode": "OSCP",
+  "name": "Offensive Security Certified Professional",
+  "provider": "Offensive Security",
+  "officialGuideUrl": "https://www.offensive-security.com/oscp/",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://www.offensive-security.com/oscp/",
+    "https://help.offensive-security.com/"
+  ],
+  "domains": [
+    {
+      "slug": "information-gathering",
+      "name": "Information Gathering",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "IG-1",
+          "description": "Passive and active reconnaissance"
+        },
+        {
+          "id": "IG-2",
+          "description": "Service enumeration and OSINT"
+        }
+      ]
+    },
+    {
+      "slug": "vulnerability-analysis",
+      "name": "Vulnerability Analysis",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "VA-1",
+          "description": "Scanning with Nmap and vulnerability scanners"
+        },
+        {
+          "id": "VA-2",
+          "description": "Analyzing and prioritizing findings"
+        },
+        {
+          "id": "VA-3",
+          "description": "Web application enumeration"
+        }
+      ]
+    },
+    {
+      "slug": "exploitation",
+      "name": "Exploitation",
+      "weightPercent": 35,
+      "objectives": [
+        {
+          "id": "EX-1",
+          "description": "Buffer overflow exploitation"
+        },
+        {
+          "id": "EX-2",
+          "description": "Client-side and remote exploits"
+        },
+        {
+          "id": "EX-3",
+          "description": "Web application exploitation"
+        },
+        {
+          "id": "EX-4",
+          "description": "Password attacks and cracking"
+        }
+      ]
+    },
+    {
+      "slug": "post-exploitation",
+      "name": "Post-Exploitation and Privilege Escalation",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "PE-1",
+          "description": "Linux privilege escalation techniques"
+        },
+        {
+          "id": "PE-2",
+          "description": "Windows privilege escalation techniques"
+        },
+        {
+          "id": "PE-3",
+          "description": "Lateral movement and pivoting"
+        }
+      ]
+    },
+    {
+      "slug": "reporting",
+      "name": "Reporting and Documentation",
+      "weightPercent": 10,
+      "objectives": [
+        {
+          "id": "RP-1",
+          "description": "Document findings and proof of concept"
+        },
+        {
+          "id": "RP-2",
+          "description": "Write professional penetration test reports"
+        }
+      ]
+    }
+  ]
+}

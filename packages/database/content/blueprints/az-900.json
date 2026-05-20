@@ -1,0 +1,96 @@
+{
+  "slug": "az-900",
+  "examCode": "AZ-900",
+  "name": "Microsoft Azure Fundamentals",
+  "provider": "Microsoft",
+  "officialGuideUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-900",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://learn.microsoft.com/azure/",
+    "https://learn.microsoft.com/credentials/certifications/azure-fundamentals/"
+  ],
+  "domains": [
+    {
+      "slug": "cloud-concepts",
+      "name": "Describe Cloud Concepts",
+      "weightPercent": 25,
+      "objectives": [
+        {
+          "id": "CC-1",
+          "description": "Define cloud computing and shared responsibility"
+        },
+        {
+          "id": "CC-2",
+          "description": "Describe cloud models: public, private, hybrid"
+        },
+        {
+          "id": "CC-3",
+          "description": "Compare consumption-based pricing models"
+        }
+      ]
+    },
+    {
+      "slug": "azure-architecture",
+      "name": "Describe Azure Architecture and Services",
+      "weightPercent": 35,
+      "objectives": [
+        {
+          "id": "AA-1",
+          "description": "Describe core Azure architectural components"
+        },
+        {
+          "id": "AA-2",
+          "description": "Describe Azure compute and networking services"
+        },
+        {
+          "id": "AA-3",
+          "description": "Describe Azure storage services"
+        },
+        {
+          "id": "AA-4",
+          "description": "Describe Azure identity and security services"
+        }
+      ]
+    },
+    {
+      "slug": "azure-management",
+      "name": "Describe Azure Management and Governance",
+      "weightPercent": 30,
+      "objectives": [
+        {
+          "id": "AM-1",
+          "description": "Describe cost management in Azure"
+        },
+        {
+          "id": "AM-2",
+          "description": "Describe governance and compliance tools"
+        },
+        {
+          "id": "AM-3",
+          "description": "Describe management and deployment tools"
+        }
+      ]
+    },
+    {
+      "slug": "azure-governance",
+      "name": "Describe Azure Governance Features",
+      "weightPercent": 10,
+      "objectives": [
+        {
+          "id": "AG-1",
+          "description": "Describe Azure Policy and Blueprints"
+        },
+        {
+          "id": "AG-2",
+          "description": "Describe resource locks and tags"
+        }
+      ]
+    }
+  ]
+}

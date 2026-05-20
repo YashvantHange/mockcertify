@@ -1,0 +1,31 @@
+{
+  "name": "mockcertify-platform",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm run --parallel dev",
+    "dev:web": "pnpm --filter @certprep/web dev",
+    "dev:api": "pnpm --filter @certprep/api dev",
+    "build": "pnpm run -r build",
+    "db:generate": "pnpm --filter @certprep/database generate",
+    "db:migrate": "pnpm --filter @certprep/database migrate",
+    "db:seed": "pnpm --filter @certprep/database seed",
+    "db:seed:questions": "pnpm --filter @certprep/database seed:questions",
+    "db:seed:aws-ml": "pnpm --filter @certprep/database seed:aws-ml",
+    "db:import-content": "node scripts/import-content.mjs",
+    "db:generate-questions": "node scripts/generate-blueprint-questions.mjs",
+    "db:validate-bank": "node scripts/validate-question-bank.mjs",
+    "db:cleanup-legacy": "node scripts/cleanup-legacy-questions.mjs",
+    "content:init": "node packages/database/content/build-blueprints.mjs && node scripts/generate-csv-templates.mjs && node scripts/init-content-progress.mjs",
+    "test:smoke": "node scripts/smoke-production.mjs",
+    "test:api": "node scripts/test-buttons.mjs",
+    "db:studio": "pnpm --filter @certprep/database studio"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "devDependencies": {
+    "@prisma/client": "^6.19.3",
+    "csv-parse": "^5.6.0"
+  }
+}

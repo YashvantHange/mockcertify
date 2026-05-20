@@ -1,0 +1,12 @@
+cert: cka
+exam_code: CKA
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  storage: { target: 50, drafted: 0, reviewed: 0, imported: 0 }
+  workloads: { target: 75, drafted: 0, reviewed: 0, imported: 0 }
+  services-networking: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  cluster-architecture: { target: 125, drafted: 0, reviewed: 0, imported: 0 }
+  troubleshooting: { target: 150, drafted: 0, reviewed: 0, imported: 0 }

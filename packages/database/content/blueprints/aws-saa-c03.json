@@ -1,0 +1,112 @@
+{
+  "slug": "aws-saa-c03",
+  "examCode": "SAA-C03",
+  "name": "AWS Solutions Architect Associate",
+  "provider": "AWS",
+  "officialGuideUrl": "https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS-Certified-Solutions-Architect-Associate_Exam-Guide.pdf",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://docs.aws.amazon.com/",
+    "https://aws.amazon.com/certification/certified-solutions-architect-associate/"
+  ],
+  "domains": [
+    {
+      "slug": "resilient-arch",
+      "name": "Design Resilient Architectures",
+      "weightPercent": 30,
+      "objectives": [
+        {
+          "id": "RA-1",
+          "description": "Design scalable and loosely coupled solutions using AWS services"
+        },
+        {
+          "id": "RA-2",
+          "description": "Design highly available and fault-tolerant architectures"
+        },
+        {
+          "id": "RA-3",
+          "description": "Design resilient storage and database solutions"
+        },
+        {
+          "id": "RA-4",
+          "description": "Implement disaster recovery strategies"
+        }
+      ]
+    },
+    {
+      "slug": "high-performing",
+      "name": "Design High-Performing Architectures",
+      "weightPercent": 28,
+      "objectives": [
+        {
+          "id": "HP-1",
+          "description": "Identify elastic compute solutions for workloads"
+        },
+        {
+          "id": "HP-2",
+          "description": "Design high-performing storage solutions"
+        },
+        {
+          "id": "HP-3",
+          "description": "Design high-performing networking solutions"
+        },
+        {
+          "id": "HP-4",
+          "description": "Determine appropriate database solutions for performance"
+        }
+      ]
+    },
+    {
+      "slug": "secure-apps",
+      "name": "Design Secure Applications and Architectures",
+      "weightPercent": 24,
+      "objectives": [
+        {
+          "id": "SA-1",
+          "description": "Design secure access to AWS resources"
+        },
+        {
+          "id": "SA-2",
+          "description": "Design secure application tiers"
+        },
+        {
+          "id": "SA-3",
+          "description": "Determine data security controls"
+        },
+        {
+          "id": "SA-4",
+          "description": "Design secure network infrastructure"
+        }
+      ]
+    },
+    {
+      "slug": "cost-optimized",
+      "name": "Design Cost-Optimized Architectures",
+      "weightPercent": 18,
+      "objectives": [
+        {
+          "id": "CO-1",
+          "description": "Design cost-optimized compute solutions"
+        },
+        {
+          "id": "CO-2",
+          "description": "Design cost-optimized storage solutions"
+        },
+        {
+          "id": "CO-3",
+          "description": "Design cost-optimized database solutions"
+        },
+        {
+          "id": "CO-4",
+          "description": "Design cost-optimized network architectures"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+node_modules
+dist
+.next
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+coverage
+.turbo
+*.tsbuildinfo
+.vercel
+
+# Large generated CSVs optional to commit (keep for one-shot deploy import)
+# packages/database/content/generated/

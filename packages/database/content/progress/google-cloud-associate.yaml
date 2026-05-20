@@ -1,0 +1,12 @@
+cert: google-cloud-associate
+exam_code: Associate Cloud Engineer
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  setting-up: { target: 88, drafted: 0, reviewed: 0, imported: 0 }
+  planning-config: { target: 88, drafted: 0, reviewed: 0, imported: 0 }
+  deploying: { target: 125, drafted: 0, reviewed: 0, imported: 0 }
+  operations: { target: 88, drafted: 0, reviewed: 0, imported: 0 }
+  access-security: { target: 113, drafted: 0, reviewed: 0, imported: 0 }

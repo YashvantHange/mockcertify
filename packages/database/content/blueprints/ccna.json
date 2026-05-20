@@ -1,0 +1,111 @@
+{
+  "slug": "ccna",
+  "examCode": "200-301",
+  "name": "Cisco CCNA",
+  "provider": "Cisco",
+  "officialGuideUrl": "https://learningnetwork.cisco.com/s/ccna-exam-topics",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://learningnetwork.cisco.com/s/ccna",
+    "https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html"
+  ],
+  "domains": [
+    {
+      "slug": "network-fundamentals",
+      "name": "Network Fundamentals",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "NF-1",
+          "description": "Compare OSI and TCP/IP models"
+        },
+        {
+          "id": "NF-2",
+          "description": "Describe IPv4/IPv6 addressing and subnetting"
+        },
+        {
+          "id": "NF-3",
+          "description": "Explain wireless fundamentals"
+        }
+      ]
+    },
+    {
+      "slug": "ip-connectivity",
+      "name": "Network Access and IP Connectivity",
+      "weightPercent": 25,
+      "objectives": [
+        {
+          "id": "IC-1",
+          "description": "Configure VLANs and trunking"
+        },
+        {
+          "id": "IC-2",
+          "description": "Configure inter-VLAN routing"
+        },
+        {
+          "id": "IC-3",
+          "description": "Configure OSPF and static routing"
+        }
+      ]
+    },
+    {
+      "slug": "ip-services",
+      "name": "IP Services",
+      "weightPercent": 25,
+      "objectives": [
+        {
+          "id": "IS-1",
+          "description": "Configure NAT and NTP"
+        },
+        {
+          "id": "IS-2",
+          "description": "Configure DHCP and DNS"
+        },
+        {
+          "id": "IS-3",
+          "description": "Configure SNMP, syslog, and QoS basics"
+        }
+      ]
+    },
+    {
+      "slug": "security-fundamentals",
+      "name": "Security Fundamentals",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "SF-1",
+          "description": "Configure ACLs and port security"
+        },
+        {
+          "id": "SF-2",
+          "description": "Describe wireless security and VPN basics"
+        }
+      ]
+    },
+    {
+      "slug": "automation",
+      "name": "Automation and Programmability",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "AU-1",
+          "description": "Compare controller-based networking"
+        },
+        {
+          "id": "AU-2",
+          "description": "Describe REST APIs and JSON/YAML"
+        },
+        {
+          "id": "AU-3",
+          "description": "Use Ansible and network automation tools"
+        }
+      ]
+    }
+  ]
+}

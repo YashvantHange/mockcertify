@@ -1,0 +1,11 @@
+cert: aws-ml-specialty
+exam_code: MLS-C01
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  data-engineering: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  exploratory-analysis: { target: 120, drafted: 0, reviewed: 0, imported: 0 }
+  modeling: { target: 180, drafted: 0, reviewed: 0, imported: 0 }
+  ml-operations: { target: 100, drafted: 0, reviewed: 0, imported: 0 }

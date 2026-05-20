@@ -1,0 +1,12 @@
+cert: itil-foundation
+exam_code: ITIL 4 Foundation
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  service-management: { target: 75, drafted: 0, reviewed: 0, imported: 0 }
+  guiding-principles: { target: 75, drafted: 0, reviewed: 0, imported: 0 }
+  four-dimensions: { target: 75, drafted: 0, reviewed: 0, imported: 0 }
+  service-value-system: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  practices: { target: 175, drafted: 0, reviewed: 0, imported: 0 }

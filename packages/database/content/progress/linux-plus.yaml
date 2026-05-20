@@ -1,0 +1,11 @@
+cert: linux-plus
+exam_code: XK0-005
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  system-management: { target: 160, drafted: 0, reviewed: 0, imported: 0 }
+  security: { target: 105, drafted: 0, reviewed: 0, imported: 0 }
+  scripting-containers: { target: 95, drafted: 0, reviewed: 0, imported: 0 }
+  troubleshooting: { target: 140, drafted: 0, reviewed: 0, imported: 0 }

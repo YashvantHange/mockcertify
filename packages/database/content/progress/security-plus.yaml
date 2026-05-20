@@ -1,0 +1,12 @@
+cert: security-plus
+exam_code: SY0-701
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  general-security: { target: 60, drafted: 0, reviewed: 0, imported: 0 }
+  threats-vulnerabilities: { target: 110, drafted: 0, reviewed: 0, imported: 0 }
+  security-architecture: { target: 90, drafted: 0, reviewed: 0, imported: 0 }
+  security-operations: { target: 140, drafted: 0, reviewed: 0, imported: 0 }
+  security-program: { target: 100, drafted: 0, reviewed: 0, imported: 0 }

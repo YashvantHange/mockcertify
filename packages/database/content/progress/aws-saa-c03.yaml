@@ -1,0 +1,11 @@
+cert: aws-saa-c03
+exam_code: SAA-C03
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  resilient-arch: { target: 150, drafted: 0, reviewed: 0, imported: 0 }
+  high-performing: { target: 140, drafted: 0, reviewed: 0, imported: 0 }
+  secure-apps: { target: 120, drafted: 0, reviewed: 0, imported: 0 }
+  cost-optimized: { target: 90, drafted: 0, reviewed: 0, imported: 0 }

@@ -1,0 +1,427 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum ExamMode {
+  PRACTICE
+  TIMED
+  REVIEW
+}
+
+enum AttemptStatus {
+  IN_PROGRESS
+  COMPLETED
+  ABANDONED
+}
+
+enum ReportStatus {
+  OPEN
+  RESOLVED
+}
+
+enum LeaderboardPeriod {
+  WEEKLY
+  ALL_TIME
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  EXPIRED
+}
+
+model User {
+  id              String    @id @default(cuid())
+  email           String    @unique
+  passwordHash    String?
+  name            String
+  avatarUrl       String?
+  role            UserRole  @default(USER)
+  googleId        String?   @unique
+  emailVerified   Boolean   @default(false)
+  streakCount     Int       @default(0)
+  lastActiveDate  DateTime?
+  locale          String    @default("en")
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  refreshTokens       RefreshToken[]
+  passwordResetTokens PasswordResetToken[]
+  examAttempts        ExamAttempt[]
+  bookmarks           Bookmark[]
+  notes               Note[]
+  discussions         Discussion[]
+  discussionReplies   DiscussionReply[]
+  questionReports     QuestionReport[]
+  subscriptions       UserSubscription[]
+  leaderboardEntries  LeaderboardEntry[]
+  certificates        Certificate[]
+  notifications       Notification[]
+  analyticsDaily      AnalyticsDaily[]
+
+  @@index([email])
+}
+
+model RefreshToken {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  description String
+  icon        String   @default("cloud")
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  certifications Certification[]
+}
+
+model Certification {
+  id              String   @id @default(cuid())
+  categoryId      String
+  name            String
+  slug            String   @unique
+  provider        String
+  description     String
+  durationMinutes Int      @default(130)
+  passingScore    Int      @default(72)
+  badgePublicId   String?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  category           Category           @relation(fields: [categoryId], references: [id])
+  domains            Domain[]
+  questions          Question[]
+  exams              Exam[]
+  examAttempts       ExamAttempt[]
+  discussions        Discussion[]
+  leaderboardEntries LeaderboardEntry[]
+  certificates       Certificate[]
+
+  @@index([categoryId])
+  @@index([slug])
+}
+
+model Domain {
+  id              String @id @default(cuid())
+  certificationId String
+  name            String
+  slug            String
+  weightPercent   Int    @default(20)
+
+  certification Certification @relation(fields: [certificationId], references: [id], onDelete: Cascade)
+  questions     Question[]
+
+  @@unique([certificationId, slug])
+  @@index([certificationId])
+}
+
+model Question {
+  id              String     @id @default(cuid())
+  certificationId String
+  domainId        String
+  objectiveId     String?
+  title           String
+  description     String?
+  difficulty      Difficulty
+  tags            String[]
+  isActive        Boolean    @default(true)
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  certification  Certification       @relation(fields: [certificationId], references: [id], onDelete: Cascade)
+  domain         Domain              @relation(fields: [domainId], references: [id])
+  options        QuestionOption[]
+  explanation    QuestionExplanation?
+  examQuestions  ExamQuestion[]
+  attemptAnswers AttemptAnswer[]
+  bookmarks      Bookmark[]
+  notes          Note[]
+  discussions    Discussion[]
+  reports        QuestionReport[]
+
+  @@index([certificationId, difficulty])
+  @@index([certificationId, isActive])
+  @@index([certificationId, domainId, difficulty])
+  @@index([domainId])
+  @@index([certificationId, objectiveId])
+}
+
+model QuestionOption {
+  id         String  @id @default(cuid())
+  questionId String
+  key        String
+  text       String
+  isCorrect  Boolean @default(false)
+
+  question       Question        @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  attemptAnswers AttemptAnswer[]
+
+  @@unique([questionId, key])
+}
+
+model QuestionExplanation {
+  id             String   @id @default(cuid())
+  questionId     String   @unique
+  body           String
+  referenceLinks Json     @default("[]")
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model Exam {
+  id               String   @id @default(cuid())
+  certificationId  String
+  name             String
+  mode             ExamMode
+  timeLimitMinutes Int?
+  questionCount    Int      @default(65)
+  createdAt        DateTime @default(now())
+
+  certification Certification @relation(fields: [certificationId], references: [id], onDelete: Cascade)
+  examQuestions ExamQuestion[]
+  attempts      ExamAttempt[]
+}
+
+model ExamQuestion {
+  id         String  @id @default(cuid())
+  examId     String
+  questionId String?
+
+  exam     Exam      @relation(fields: [examId], references: [id], onDelete: Cascade)
+  question Question? @relation(fields: [questionId], references: [id])
+}
+
+model ExamAttempt {
+  id              String        @id @default(cuid())
+  userId          String
+  certificationId String
+  examId          String?
+  mode            ExamMode
+  status          AttemptStatus @default(IN_PROGRESS)
+  startedAt       DateTime      @default(now())
+  endedAt         DateTime?
+  score           Float?
+  correctCount    Int           @default(0)
+  totalCount      Int           @default(0)
+  timeSpentSec    Int           @default(0)
+  timeLimitMinutes Int?
+
+  user          User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  certification Certification   @relation(fields: [certificationId], references: [id])
+  exam          Exam?           @relation(fields: [examId], references: [id])
+  answers       AttemptAnswer[]
+
+  @@index([userId, certificationId])
+  @@index([userId, status])
+}
+
+model AttemptAnswer {
+  id               String    @id @default(cuid())
+  attemptId        String
+  questionId       String
+  selectedOptionId String?
+  isCorrect        Boolean?
+  flagged          Boolean   @default(false)
+  answeredAt       DateTime?
+  timeSpentSec     Int       @default(0)
+
+  attempt          ExamAttempt     @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question         Question        @relation(fields: [questionId], references: [id])
+  selectedOption   QuestionOption? @relation(fields: [selectedOptionId], references: [id])
+
+  @@unique([attemptId, questionId])
+}
+
+model Bookmark {
+  id         String   @id @default(cuid())
+  userId     String
+  questionId String
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+}
+
+model Note {
+  id         String   @id @default(cuid())
+  userId     String
+  questionId String
+  content    String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+}
+
+model Discussion {
+  id              String   @id @default(cuid())
+  userId          String
+  certificationId String?
+  questionId      String?
+  title           String
+  body            String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user            User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  certification   Certification?    @relation(fields: [certificationId], references: [id])
+  question        Question?         @relation(fields: [questionId], references: [id])
+  replies         DiscussionReply[]
+
+  @@index([certificationId])
+  @@index([questionId])
+}
+
+model DiscussionReply {
+  id           String   @id @default(cuid())
+  discussionId String
+  userId       String
+  body         String
+  createdAt    DateTime @default(now())
+
+  discussion Discussion @relation(fields: [discussionId], references: [id], onDelete: Cascade)
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model QuestionReport {
+  id         String       @id @default(cuid())
+  questionId String
+  userId     String
+  reason     String
+  status     ReportStatus @default(OPEN)
+  createdAt  DateTime     @default(now())
+  resolvedAt DateTime?
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([status])
+}
+
+model SubscriptionPlan {
+  id           String   @id @default(cuid())
+  name         String
+  slug         String   @unique
+  priceDisplay String
+  features     Json
+  isActive     Boolean  @default(true)
+  sortOrder    Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  subscriptions UserSubscription[]
+}
+
+model UserSubscription {
+  id        String             @id @default(cuid())
+  userId    String
+  planId    String
+  status    SubscriptionStatus @default(ACTIVE)
+  startsAt  DateTime           @default(now())
+  endsAt    DateTime?
+
+  user User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan SubscriptionPlan @relation(fields: [planId], references: [id])
+
+  @@index([userId])
+}
+
+model LeaderboardEntry {
+  id              String            @id @default(cuid())
+  userId          String
+  certificationId String?
+  period          LeaderboardPeriod
+  score           Int               @default(0)
+  rank            Int               @default(0)
+  updatedAt       DateTime          @updatedAt
+
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  certification   Certification?   @relation(fields: [certificationId], references: [id])
+
+  @@unique([userId, certificationId, period])
+  @@index([period, certificationId, rank])
+}
+
+model Certificate {
+  id              String   @id @default(cuid())
+  userId          String
+  certificationId String
+  score           Float
+  issuedAt        DateTime @default(now())
+  pdfUrl          String?
+
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  certification   Certification @relation(fields: [certificationId], references: [id])
+
+  @@unique([userId, certificationId])
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  type      String
+  title     String
+  body      String
+  payload   Json      @default("{}")
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, readAt])
+}
+
+model AnalyticsDaily {
+  id                String   @id @default(cuid())
+  userId            String
+  date              DateTime @db.Date
+  questionsAnswered Int      @default(0)
+  correctCount      Int      @default(0)
+  timeSpentSec      Int      @default(0)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@index([userId, date])
+}

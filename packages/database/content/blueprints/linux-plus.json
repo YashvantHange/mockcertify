@@ -1,0 +1,99 @@
+{
+  "slug": "linux-plus",
+  "examCode": "XK0-005",
+  "name": "CompTIA Linux+",
+  "provider": "CompTIA",
+  "officialGuideUrl": "https://www.comptia.org/certifications/linux",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://www.comptia.org/certifications/linux"
+  ],
+  "domains": [
+    {
+      "slug": "system-management",
+      "name": "System Management",
+      "weightPercent": 32,
+      "objectives": [
+        {
+          "id": "SM-1",
+          "description": "Manage Linux boot process and systemd"
+        },
+        {
+          "id": "SM-2",
+          "description": "Configure storage and filesystems"
+        },
+        {
+          "id": "SM-3",
+          "description": "Manage packages and repositories"
+        },
+        {
+          "id": "SM-4",
+          "description": "Manage users, groups, and permissions"
+        }
+      ]
+    },
+    {
+      "slug": "security",
+      "name": "Security",
+      "weightPercent": 21,
+      "objectives": [
+        {
+          "id": "SE-1",
+          "description": "Configure firewalls and SELinux/AppArmor"
+        },
+        {
+          "id": "SE-2",
+          "description": "Implement SSH and certificate management"
+        },
+        {
+          "id": "SE-3",
+          "description": "Apply logging and auditing controls"
+        }
+      ]
+    },
+    {
+      "slug": "scripting-containers",
+      "name": "Scripting, Containers, and Automation",
+      "weightPercent": 19,
+      "objectives": [
+        {
+          "id": "SC-1",
+          "description": "Write bash scripts and cron jobs"
+        },
+        {
+          "id": "SC-2",
+          "description": "Use Git and orchestration basics"
+        },
+        {
+          "id": "SC-3",
+          "description": "Deploy and manage containers"
+        }
+      ]
+    },
+    {
+      "slug": "troubleshooting",
+      "name": "Troubleshooting",
+      "weightPercent": 28,
+      "objectives": [
+        {
+          "id": "TR-1",
+          "description": "Analyze system logs and performance"
+        },
+        {
+          "id": "TR-2",
+          "description": "Troubleshoot network and application issues"
+        },
+        {
+          "id": "TR-3",
+          "description": "Diagnose boot and storage failures"
+        }
+      ]
+    }
+  ]
+}

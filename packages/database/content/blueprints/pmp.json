@@ -1,0 +1,89 @@
+{
+  "slug": "pmp",
+  "examCode": "PMP",
+  "name": "Project Management Professional",
+  "provider": "PMI",
+  "officialGuideUrl": "https://www.pmi.org/certifications/project-management-pmp",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://www.pmi.org/certifications/project-management-pmp",
+    "https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/pmp-examination-content-outline.pdf"
+  ],
+  "domains": [
+    {
+      "slug": "people",
+      "name": "People",
+      "weightPercent": 42,
+      "objectives": [
+        {
+          "id": "PE-1",
+          "description": "Manage conflict and lead teams"
+        },
+        {
+          "id": "PE-2",
+          "description": "Support team performance and development"
+        },
+        {
+          "id": "PE-3",
+          "description": "Empower stakeholders and negotiate"
+        },
+        {
+          "id": "PE-4",
+          "description": "Build shared understanding and engagement"
+        }
+      ]
+    },
+    {
+      "slug": "process",
+      "name": "Process",
+      "weightPercent": 50,
+      "objectives": [
+        {
+          "id": "PR-1",
+          "description": "Execute projects with appropriate methodology"
+        },
+        {
+          "id": "PR-2",
+          "description": "Manage scope, schedule, and budget"
+        },
+        {
+          "id": "PR-3",
+          "description": "Manage quality and resources"
+        },
+        {
+          "id": "PR-4",
+          "description": "Manage communications and risks"
+        },
+        {
+          "id": "PR-5",
+          "description": "Manage procurement and integrations"
+        }
+      ]
+    },
+    {
+      "slug": "business-environment",
+      "name": "Business Environment",
+      "weightPercent": 8,
+      "objectives": [
+        {
+          "id": "BE-1",
+          "description": "Plan and manage project compliance"
+        },
+        {
+          "id": "BE-2",
+          "description": "Evaluate and deliver business benefits"
+        },
+        {
+          "id": "BE-3",
+          "description": "Support organizational change"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+cert: pmp
+exam_code: PMP
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  people: { target: 210, drafted: 0, reviewed: 0, imported: 0 }
+  process: { target: 250, drafted: 0, reviewed: 0, imported: 0 }
+  business-environment: { target: 40, drafted: 0, reviewed: 0, imported: 0 }

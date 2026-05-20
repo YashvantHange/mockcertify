@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Home",
+    "categories": "Categories",
+    "pricing": "Pricing",
+    "dashboard": "Dashboard",
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out"
+  },
+  "hero": {
+    "title": "Master Your Certification Exams",
+    "subtitle": "Practice tests, timed exams, and analytics for AWS, Azure, Security+, CISSP, and 16+ certifications.",
+    "cta": "Start Practicing Free",
+    "secondary": "Browse Certifications"
+  }
+}

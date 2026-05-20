@@ -1,0 +1,11 @@
+cert: ceh
+exam_code: CEH v12
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  reconnaissance: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  system-hacking: { target: 125, drafted: 0, reviewed: 0, imported: 0 }
+  network-attacks: { target: 125, drafted: 0, reviewed: 0, imported: 0 }
+  web-hacking: { target: 150, drafted: 0, reviewed: 0, imported: 0 }

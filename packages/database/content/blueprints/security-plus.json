@@ -1,0 +1,123 @@
+{
+  "slug": "security-plus",
+  "examCode": "SY0-701",
+  "name": "CompTIA Security+",
+  "provider": "CompTIA",
+  "officialGuideUrl": "https://www.comptia.org/certifications/security",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://www.comptia.org/certifications/security",
+    "https://www.comptia.org/training/resources/exam-objectives"
+  ],
+  "domains": [
+    {
+      "slug": "general-security",
+      "name": "General Security Concepts",
+      "weightPercent": 12,
+      "objectives": [
+        {
+          "id": "GS-1",
+          "description": "Compare security controls"
+        },
+        {
+          "id": "GS-2",
+          "description": "Explain fundamental security concepts"
+        },
+        {
+          "id": "GS-3",
+          "description": "Summarize change management and resilience"
+        }
+      ]
+    },
+    {
+      "slug": "threats-vulnerabilities",
+      "name": "Threats, Vulnerabilities, and Mitigations",
+      "weightPercent": 22,
+      "objectives": [
+        {
+          "id": "TV-1",
+          "description": "Identify social engineering and malware"
+        },
+        {
+          "id": "TV-2",
+          "description": "Analyze indicators of compromise"
+        },
+        {
+          "id": "TV-3",
+          "description": "Explain vulnerability scanning and pentesting"
+        },
+        {
+          "id": "TV-4",
+          "description": "Mitigate vulnerabilities"
+        }
+      ]
+    },
+    {
+      "slug": "security-architecture",
+      "name": "Security Architecture",
+      "weightPercent": 18,
+      "objectives": [
+        {
+          "id": "SA-1",
+          "description": "Secure enterprise infrastructure"
+        },
+        {
+          "id": "SA-2",
+          "description": "Secure cloud and hybrid environments"
+        },
+        {
+          "id": "SA-3",
+          "description": "Secure mobile and embedded devices"
+        }
+      ]
+    },
+    {
+      "slug": "security-operations",
+      "name": "Security Operations",
+      "weightPercent": 28,
+      "objectives": [
+        {
+          "id": "SO-1",
+          "description": "Implement incident response procedures"
+        },
+        {
+          "id": "SO-2",
+          "description": "Use digital forensics tools"
+        },
+        {
+          "id": "SO-3",
+          "description": "Apply secure baselines and hardening"
+        },
+        {
+          "id": "SO-4",
+          "description": "Automate security tasks"
+        }
+      ]
+    },
+    {
+      "slug": "security-program",
+      "name": "Security Program Management and Oversight",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "SP-1",
+          "description": "Governance, risk, and compliance"
+        },
+        {
+          "id": "SP-2",
+          "description": "Privacy and data protection"
+        },
+        {
+          "id": "SP-3",
+          "description": "Third-party risk management"
+        }
+      ]
+    }
+  ]
+}

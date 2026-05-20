@@ -1,0 +1,112 @@
+{
+  "slug": "aws-ml-specialty",
+  "examCode": "MLS-C01",
+  "name": "AWS Certified Machine Learning – Specialty",
+  "provider": "AWS",
+  "officialGuideUrl": "https://d1.awsstatic.com/training-and-certification/docs-ml-spec/AWS-Certified-Machine-Learning-Specialty_Exam-Guide.pdf",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://docs.aws.amazon.com/sagemaker/",
+    "https://aws.amazon.com/certification/certified-machine-learning-specialty/"
+  ],
+  "domains": [
+    {
+      "slug": "data-engineering",
+      "name": "Data Engineering",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "DE-1",
+          "description": "Create data repositories for ML"
+        },
+        {
+          "id": "DE-2",
+          "description": "Identify and implement data ingestion solutions"
+        },
+        {
+          "id": "DE-3",
+          "description": "Data transformation, integrity, and feature stores"
+        }
+      ]
+    },
+    {
+      "slug": "exploratory-analysis",
+      "name": "Exploratory Data Analysis",
+      "weightPercent": 24,
+      "objectives": [
+        {
+          "id": "EA-1",
+          "description": "Sanitize and prepare data for modeling"
+        },
+        {
+          "id": "EA-2",
+          "description": "Perform feature engineering"
+        },
+        {
+          "id": "EA-3",
+          "description": "Visualize data and communicate insights"
+        },
+        {
+          "id": "EA-4",
+          "description": "Identify bias and data quality issues"
+        }
+      ]
+    },
+    {
+      "slug": "modeling",
+      "name": "Modeling",
+      "weightPercent": 36,
+      "objectives": [
+        {
+          "id": "MO-1",
+          "description": "Select appropriate ML algorithms"
+        },
+        {
+          "id": "MO-2",
+          "description": "Train and tune models on SageMaker"
+        },
+        {
+          "id": "MO-3",
+          "description": "Evaluate model metrics and overfitting"
+        },
+        {
+          "id": "MO-4",
+          "description": "Deploy models for inference"
+        },
+        {
+          "id": "MO-5",
+          "description": "Use built-in algorithms and custom training"
+        }
+      ]
+    },
+    {
+      "slug": "ml-operations",
+      "name": "ML Implementation and Operations",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "ML-1",
+          "description": "Build ML pipelines and MLOps"
+        },
+        {
+          "id": "ML-2",
+          "description": "Apply security and compliance to ML workloads"
+        },
+        {
+          "id": "ML-3",
+          "description": "Monitor models in production"
+        },
+        {
+          "id": "ML-4",
+          "description": "Optimize cost and performance of ML systems"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "itil-foundation",
+  "examCode": "ITIL 4 Foundation",
+  "name": "ITIL 4 Foundation",
+  "provider": "AXELOS",
+  "officialGuideUrl": "https://www.axelos.com/certifications/itil-service-management/itil-4-foundation",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://www.axelos.com/certifications/itil-service-management/itil-4-foundation"
+  ],
+  "domains": [
+    {
+      "slug": "service-management",
+      "name": "Understand Key Concepts of Service Management",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "SM-1",
+          "description": "Define service, value, and stakeholders"
+        },
+        {
+          "id": "SM-2",
+          "description": "Describe service relationships and value chain"
+        }
+      ]
+    },
+    {
+      "slug": "guiding-principles",
+      "name": "Understand Guiding Principles",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "GP-1",
+          "description": "Apply ITIL guiding principles"
+        },
+        {
+          "id": "GP-2",
+          "description": "Focus on value and start where you are"
+        }
+      ]
+    },
+    {
+      "slug": "four-dimensions",
+      "name": "Understand Four Dimensions of Service Management",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "FD-1",
+          "description": "Organizations and people dimension"
+        },
+        {
+          "id": "FD-2",
+          "description": "Information, technology, partners, and processes"
+        }
+      ]
+    },
+    {
+      "slug": "service-value-system",
+      "name": "Understand the Service Value System",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "SV-1",
+          "description": "Describe governance and continual improvement"
+        },
+        {
+          "id": "SV-2",
+          "description": "Explain service value chain activities"
+        }
+      ]
+    },
+    {
+      "slug": "practices",
+      "name": "Understand Key ITIL Practices",
+      "weightPercent": 35,
+      "objectives": [
+        {
+          "id": "PA-1",
+          "description": "Incident, problem, and change management"
+        },
+        {
+          "id": "PA-2",
+          "description": "Service level and configuration management"
+        },
+        {
+          "id": "PA-3",
+          "description": "Continual improvement and monitoring"
+        },
+        {
+          "id": "PA-4",
+          "description": "Relationship and workforce practices"
+        }
+      ]
+    }
+  ]
+}

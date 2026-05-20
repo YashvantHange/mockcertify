@@ -1,0 +1,110 @@
+{
+  "slug": "network-plus",
+  "examCode": "N10-009",
+  "name": "CompTIA Network+",
+  "provider": "CompTIA",
+  "officialGuideUrl": "https://www.comptia.org/certifications/network",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://www.comptia.org/certifications/network"
+  ],
+  "domains": [
+    {
+      "slug": "networking-concepts",
+      "name": "Networking Concepts",
+      "weightPercent": 23,
+      "objectives": [
+        {
+          "id": "NC-1",
+          "description": "Explain OSI model and protocols"
+        },
+        {
+          "id": "NC-2",
+          "description": "Describe ports, IP addressing, and subnetting"
+        },
+        {
+          "id": "NC-3",
+          "description": "Compare network topologies and technologies"
+        }
+      ]
+    },
+    {
+      "slug": "network-implementation",
+      "name": "Network Implementation",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "NI-1",
+          "description": "Configure routing and switching"
+        },
+        {
+          "id": "NI-2",
+          "description": "Deploy wired and wireless networks"
+        },
+        {
+          "id": "NI-3",
+          "description": "Implement network services"
+        }
+      ]
+    },
+    {
+      "slug": "network-operations",
+      "name": "Network Operations",
+      "weightPercent": 19,
+      "objectives": [
+        {
+          "id": "NO-1",
+          "description": "Monitor and optimize network performance"
+        },
+        {
+          "id": "NO-2",
+          "description": "Use network troubleshooting methodology"
+        },
+        {
+          "id": "NO-3",
+          "description": "Manage documentation and change control"
+        }
+      ]
+    },
+    {
+      "slug": "network-security",
+      "name": "Network Security",
+      "weightPercent": 14,
+      "objectives": [
+        {
+          "id": "NS-1",
+          "description": "Implement network hardening"
+        },
+        {
+          "id": "NS-2",
+          "description": "Configure firewalls and access control"
+        }
+      ]
+    },
+    {
+      "slug": "network-troubleshooting",
+      "name": "Network Troubleshooting",
+      "weightPercent": 24,
+      "objectives": [
+        {
+          "id": "NT-1",
+          "description": "Troubleshoot cabling and physical issues"
+        },
+        {
+          "id": "NT-2",
+          "description": "Troubleshoot connectivity and DNS"
+        },
+        {
+          "id": "NT-3",
+          "description": "Troubleshoot wireless and security issues"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+cert: oscp
+exam_code: OSCP
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  information-gathering: { target: 75, drafted: 0, reviewed: 0, imported: 0 }
+  vulnerability-analysis: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  exploitation: { target: 175, drafted: 0, reviewed: 0, imported: 0 }
+  post-exploitation: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  reporting: { target: 50, drafted: 0, reviewed: 0, imported: 0 }

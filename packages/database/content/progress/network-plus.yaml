@@ -1,0 +1,12 @@
+cert: network-plus
+exam_code: N10-009
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  networking-concepts: { target: 115, drafted: 0, reviewed: 0, imported: 0 }
+  network-implementation: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  network-operations: { target: 95, drafted: 0, reviewed: 0, imported: 0 }
+  network-security: { target: 70, drafted: 0, reviewed: 0, imported: 0 }
+  network-troubleshooting: { target: 120, drafted: 0, reviewed: 0, imported: 0 }

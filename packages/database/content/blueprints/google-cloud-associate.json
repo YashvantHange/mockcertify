@@ -1,0 +1,119 @@
+{
+  "slug": "google-cloud-associate",
+  "examCode": "Associate Cloud Engineer",
+  "name": "Google Cloud Associate Cloud Engineer",
+  "provider": "Google",
+  "officialGuideUrl": "https://cloud.google.com/learn/certification/cloud-engineer",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://cloud.google.com/docs",
+    "https://cloud.google.com/certification/cloud-engineer"
+  ],
+  "domains": [
+    {
+      "slug": "setting-up",
+      "name": "Setting Up a Cloud Solution Environment",
+      "weightPercent": 17.5,
+      "objectives": [
+        {
+          "id": "SU-1",
+          "description": "Set up cloud projects and billing"
+        },
+        {
+          "id": "SU-2",
+          "description": "Manage users and service accounts"
+        },
+        {
+          "id": "SU-3",
+          "description": "Enable APIs and provision resources"
+        }
+      ]
+    },
+    {
+      "slug": "planning-config",
+      "name": "Planning and Configuring a Cloud Solution",
+      "weightPercent": 17.5,
+      "objectives": [
+        {
+          "id": "PC-1",
+          "description": "Plan compute, storage, and network resources"
+        },
+        {
+          "id": "PC-2",
+          "description": "Configure IAM and organization policies"
+        },
+        {
+          "id": "PC-3",
+          "description": "Design for security and compliance"
+        }
+      ]
+    },
+    {
+      "slug": "deploying",
+      "name": "Deploying and Implementing a Cloud Solution",
+      "weightPercent": 25,
+      "objectives": [
+        {
+          "id": "DP-1",
+          "description": "Deploy compute resources (GCE, GKE, Cloud Run)"
+        },
+        {
+          "id": "DP-2",
+          "description": "Deploy and manage networking (VPC, load balancers)"
+        },
+        {
+          "id": "DP-3",
+          "description": "Deploy data services (Cloud SQL, BigQuery, Storage)"
+        },
+        {
+          "id": "DP-4",
+          "description": "Implement CI/CD with Cloud Build"
+        }
+      ]
+    },
+    {
+      "slug": "operations",
+      "name": "Ensuring Successful Operation of a Cloud Solution",
+      "weightPercent": 17.5,
+      "objectives": [
+        {
+          "id": "OP-1",
+          "description": "Monitor and log with Cloud Operations"
+        },
+        {
+          "id": "OP-2",
+          "description": "Manage incidents and optimize performance"
+        },
+        {
+          "id": "OP-3",
+          "description": "Maintain managed services"
+        }
+      ]
+    },
+    {
+      "slug": "access-security",
+      "name": "Configuring Access and Security",
+      "weightPercent": 22.5,
+      "objectives": [
+        {
+          "id": "AS-1",
+          "description": "Configure IAM roles and permissions"
+        },
+        {
+          "id": "AS-2",
+          "description": "Implement VPC security controls"
+        },
+        {
+          "id": "AS-3",
+          "description": "Manage encryption and secrets"
+        }
+      ]
+    }
+  ]
+}

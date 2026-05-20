@@ -1,0 +1,12 @@
+cert: aws-security-specialty
+exam_code: SCS-C02
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  incident-response: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  logging-monitoring: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  infrastructure-security: { target: 130, drafted: 0, reviewed: 0, imported: 0 }
+  iam: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  data-protection: { target: 70, drafted: 0, reviewed: 0, imported: 0 }

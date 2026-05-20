@@ -1,0 +1,156 @@
+{
+  "slug": "cissp",
+  "examCode": "CISSP",
+  "name": "Certified Information Systems Security Professional",
+  "provider": "ISC2",
+  "officialGuideUrl": "https://www.isc2.org/certifications/cissp/cissp-certification-exam-outline",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://www.isc2.org/certifications/cissp",
+    "https://www.isc2.org/CISSP-Exam-Outline"
+  ],
+  "domains": [
+    {
+      "slug": "security-risk",
+      "name": "Security and Risk Management",
+      "weightPercent": 15,
+      "objectives": [
+        {
+          "id": "SR-1",
+          "description": "Understand security governance principles"
+        },
+        {
+          "id": "SR-2",
+          "description": "Manage risk and compliance"
+        },
+        {
+          "id": "SR-3",
+          "description": "Apply business continuity concepts"
+        }
+      ]
+    },
+    {
+      "slug": "asset-security",
+      "name": "Asset Security",
+      "weightPercent": 10,
+      "objectives": [
+        {
+          "id": "AS-1",
+          "description": "Classify and protect information assets"
+        },
+        {
+          "id": "AS-2",
+          "description": "Manage data lifecycle and retention"
+        }
+      ]
+    },
+    {
+      "slug": "security-architecture",
+      "name": "Security Architecture and Engineering",
+      "weightPercent": 13,
+      "objectives": [
+        {
+          "id": "AE-1",
+          "description": "Implement secure design principles"
+        },
+        {
+          "id": "AE-2",
+          "description": "Select cryptographic solutions"
+        },
+        {
+          "id": "AE-3",
+          "description": "Assess and mitigate vulnerabilities"
+        }
+      ]
+    },
+    {
+      "slug": "communication-network",
+      "name": "Communication and Network Security",
+      "weightPercent": 13,
+      "objectives": [
+        {
+          "id": "CN-1",
+          "description": "Design secure network architecture"
+        },
+        {
+          "id": "CN-2",
+          "description": "Secure network components and protocols"
+        }
+      ]
+    },
+    {
+      "slug": "iam",
+      "name": "Identity and Access Management",
+      "weightPercent": 13,
+      "objectives": [
+        {
+          "id": "IA-1",
+          "description": "Control physical and logical access"
+        },
+        {
+          "id": "IA-2",
+          "description": "Manage identification and authentication"
+        },
+        {
+          "id": "IA-3",
+          "description": "Federate identity across systems"
+        }
+      ]
+    },
+    {
+      "slug": "security-assessment",
+      "name": "Security Assessment and Testing",
+      "weightPercent": 12,
+      "objectives": [
+        {
+          "id": "AT-1",
+          "description": "Design and validate assessment strategies"
+        },
+        {
+          "id": "AT-2",
+          "description": "Conduct security audits and testing"
+        }
+      ]
+    },
+    {
+      "slug": "security-operations",
+      "name": "Security Operations",
+      "weightPercent": 13,
+      "objectives": [
+        {
+          "id": "OP-1",
+          "description": "Support investigations and incident management"
+        },
+        {
+          "id": "OP-2",
+          "description": "Implement logging and monitoring"
+        },
+        {
+          "id": "OP-3",
+          "description": "Manage disaster recovery"
+        }
+      ]
+    },
+    {
+      "slug": "software-security",
+      "name": "Software Development Security",
+      "weightPercent": 11,
+      "objectives": [
+        {
+          "id": "SD-1",
+          "description": "Integrate security into SDLC"
+        },
+        {
+          "id": "SD-2",
+          "description": "Apply secure coding standards"
+        }
+      ]
+    }
+  ]
+}

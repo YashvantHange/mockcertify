@@ -1,0 +1,12 @@
+cert: ccna
+exam_code: 200-301
+target: 500
+owner: unassigned
+status: in_progress
+last_updated: 2026-05-17
+domains:
+  network-fundamentals: { target: 100, drafted: 0, reviewed: 0, imported: 0 }
+  ip-connectivity: { target: 125, drafted: 0, reviewed: 0, imported: 0 }
+  ip-services: { target: 125, drafted: 0, reviewed: 0, imported: 0 }
+  security-fundamentals: { target: 75, drafted: 0, reviewed: 0, imported: 0 }
+  automation: { target: 75, drafted: 0, reviewed: 0, imported: 0 }

@@ -1,0 +1,119 @@
+{
+  "slug": "aws-security-specialty",
+  "examCode": "SCS-C02",
+  "name": "AWS Certified Security – Specialty",
+  "provider": "AWS",
+  "officialGuideUrl": "https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Specialty_Exam-Guide.pdf",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://docs.aws.amazon.com/security/",
+    "https://aws.amazon.com/certification/certified-security-specialty/"
+  ],
+  "domains": [
+    {
+      "slug": "incident-response",
+      "name": "Incident Response",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "IR-1",
+          "description": "Design and implement incident response workflows"
+        },
+        {
+          "id": "IR-2",
+          "description": "Triage security events and automate response"
+        },
+        {
+          "id": "IR-3",
+          "description": "Contain and eradicate threats in AWS"
+        }
+      ]
+    },
+    {
+      "slug": "logging-monitoring",
+      "name": "Logging and Monitoring",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "LM-1",
+          "description": "Design centralized logging architectures"
+        },
+        {
+          "id": "LM-2",
+          "description": "Implement detective controls and alerting"
+        },
+        {
+          "id": "LM-3",
+          "description": "Analyze logs for security anomalies"
+        }
+      ]
+    },
+    {
+      "slug": "infrastructure-security",
+      "name": "Infrastructure Security",
+      "weightPercent": 26,
+      "objectives": [
+        {
+          "id": "IS-1",
+          "description": "Design secure VPC and network segmentation"
+        },
+        {
+          "id": "IS-2",
+          "description": "Harden compute and container workloads"
+        },
+        {
+          "id": "IS-3",
+          "description": "Implement edge and DDoS protection"
+        },
+        {
+          "id": "IS-4",
+          "description": "Secure serverless and API endpoints"
+        }
+      ]
+    },
+    {
+      "slug": "iam",
+      "name": "Identity and Access Management",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "IAM-1",
+          "description": "Design least-privilege IAM policies"
+        },
+        {
+          "id": "IAM-2",
+          "description": "Implement federation and SSO"
+        },
+        {
+          "id": "IAM-3",
+          "description": "Manage secrets and credentials"
+        }
+      ]
+    },
+    {
+      "slug": "data-protection",
+      "name": "Data Protection",
+      "weightPercent": 14,
+      "objectives": [
+        {
+          "id": "DP-1",
+          "description": "Encrypt data at rest and in transit"
+        },
+        {
+          "id": "DP-2",
+          "description": "Implement key management with KMS"
+        },
+        {
+          "id": "DP-3",
+          "description": "Design data classification and retention"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "slug": "ceh",
+  "examCode": "CEH v12",
+  "name": "Certified Ethical Hacker",
+  "provider": "EC-Council",
+  "officialGuideUrl": "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/",
+  "lastReviewed": "2026-05-16",
+  "questionsTarget": 500,
+  "difficultyMix": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 30
+  },
+  "referenceUrls": [
+    "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/"
+  ],
+  "domains": [
+    {
+      "slug": "reconnaissance",
+      "name": "Information Security and Ethical Hacking Overview",
+      "weightPercent": 20,
+      "objectives": [
+        {
+          "id": "RC-1",
+          "description": "Footprinting and reconnaissance techniques"
+        },
+        {
+          "id": "RC-2",
+          "description": "Scanning networks and enumeration"
+        },
+        {
+          "id": "RC-3",
+          "description": "Vulnerability analysis methodology"
+        }
+      ]
+    },
+    {
+      "slug": "system-hacking",
+      "name": "System Hacking Phases",
+      "weightPercent": 25,
+      "objectives": [
+        {
+          "id": "SH-1",
+          "description": "Gaining access and escalating privileges"
+        },
+        {
+          "id": "SH-2",
+          "description": "Maintaining access and covering tracks"
+        },
+        {
+          "id": "SH-3",
+          "description": "Malware threats and countermeasures"
+        }
+      ]
+    },
+    {
+      "slug": "network-attacks",
+      "name": "Network and Perimeter Hacking",
+      "weightPercent": 25,
+      "objectives": [
+        {
+          "id": "NA-1",
+          "description": "Sniffing and session hijacking"
+        },
+        {
+          "id": "NA-2",
+          "description": "Evading IDS, firewalls, and honeypots"
+        },
+        {
+          "id": "NA-3",
+          "description": "Hacking wireless networks"
+        }
+      ]
+    },
+    {
+      "slug": "web-hacking",
+      "name": "Web Application and Cloud Hacking",
+      "weightPercent": 30,
+      "objectives": [
+        {
+          "id": "WH-1",
+          "description": "Web server and application attacks"
+        },
+        {
+          "id": "WH-2",
+          "description": "SQL injection and XSS"
+        },
+        {
+          "id": "WH-3",
+          "description": "IoT and cloud hacking concepts"
+        },
+        {
+          "id": "WH-4",
+          "description": "Cryptography attacks and defenses"
+        }
+      ]
+    }
+  ]
+}
