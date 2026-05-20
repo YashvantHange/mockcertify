@@ -10,6 +10,7 @@ coverage
 .turbo
 *.tsbuildinfo
 .vercel
+**/.vercel
 
 # Large generated CSVs optional to commit (keep for one-shot deploy import)
 # packages/database/content/generated/
