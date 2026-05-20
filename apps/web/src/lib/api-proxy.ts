@@ -15,8 +15,20 @@ export async function proxyToApi(path: string, init?: RequestInit) {
     cache: "no-store",
   });
   const body = await res.text();
-  return new NextResponse(body, {
-    status: res.status,
-    headers: { "Content-Type": res.headers.get("content-type") ?? "application/json" },
-  });
+  const headers = new Headers();
+  const contentType = res.headers.get("content-type");
+  if (contentType) headers.set("Content-Type", contentType);
+
+  // Forward auth cookies from API to the browser (same-origin on Vercel).
+  const getSetCookie = (res.headers as Headers & { getSetCookie?: () => string[] }).getSetCookie;
+  if (typeof getSetCookie === "function") {
+    for (const cookie of getSetCookie.call(res.headers)) {
+      headers.append("Set-Cookie", cookie);
+    }
+  } else {
+    const raw = res.headers.get("set-cookie");
+    if (raw) headers.append("Set-Cookie", raw);
+  }
+
+  return new NextResponse(body, { status: res.status, headers });
 }
