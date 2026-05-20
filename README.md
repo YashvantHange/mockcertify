@@ -5,6 +5,8 @@ Full-stack monorepo for IT certification practice exams (AWS, Azure, Security+, 
 **GitHub:** https://github.com/YashvantHange/mockcertify  
 **Go live:** follow **[DEPLOY.md](./DEPLOY.md)** (Vercel + Render, ~15 minutes)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/YashvantHange/mockcertify)
+
 ## Stack
 
 - **Frontend:** Next.js 15, React, Tailwind CSS, Framer Motion, Recharts
