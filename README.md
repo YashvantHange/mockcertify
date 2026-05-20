@@ -2,6 +2,9 @@
 
 Full-stack monorepo for IT certification practice exams (AWS, Azure, Security+, CISSP, CCNA, and 16+ certs).
 
+**GitHub:** https://github.com/YashvantHange/mockcertify  
+**Go live:** follow **[DEPLOY.md](./DEPLOY.md)** (Vercel + Render, ~15 minutes)
+
 ## Stack
 
 - **Frontend:** Next.js 15, React, Tailwind CSS, Framer Motion, Recharts
