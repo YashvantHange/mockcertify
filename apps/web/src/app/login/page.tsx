@@ -82,16 +82,12 @@ function LoginForm() {
             <span className="bg-white dark:bg-slate-900 px-2 text-slate-500">or</span>
           </div>
         </div>
-        {googleEnabled ? (
-          <a href={getGoogleAuthUrl()}>
+        {googleEnabled && (
+          <a href={getGoogleAuthUrl()} className="block">
             <Button variant="secondary" className="w-full" type="button">
               Continue with Google
             </Button>
           </a>
-        ) : (
-          <p className="text-xs text-slate-500 text-center">
-            Google sign-in is not configured yet. Use email/password or ask the admin to add Google OAuth keys.
-          </p>
         )}
         <p className="mt-6 text-center text-sm text-slate-600">
           No account? <Link href="/signup" className="text-indigo-600 hover:underline">Sign up</Link>

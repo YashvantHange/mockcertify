@@ -63,14 +63,10 @@ export default function SignupPage() {
           </div>
           <Button type="submit" className="w-full" disabled={loading}>{loading ? "Creating..." : "Create account"}</Button>
         </form>
-        {googleEnabled ? (
+        {googleEnabled && (
           <a href={getGoogleAuthUrl()} className="block mt-4">
             <Button variant="secondary" className="w-full" type="button">Continue with Google</Button>
           </a>
-        ) : (
-          <p className="text-xs text-slate-500 text-center mt-4">
-            Google sign-in is not configured yet. Use email/password above.
-          </p>
         )}
         <p className="mt-6 text-center text-sm">Have an account? <Link href="/login" className="text-indigo-600">Log in</Link></p>
       </Card>

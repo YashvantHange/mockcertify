@@ -239,16 +239,24 @@ router.post("/reset-password", validate(resetPasswordSchema), async (req, res, n
 });
 
 router.get("/config", (_req, res) => {
+  const keysPresent = Boolean(config.googleClientId && config.googleClientSecret);
+  const enabled = process.env.GOOGLE_OAUTH_ENABLED === "true";
   res.json({
-    googleOAuth: Boolean(config.googleClientId && config.googleClientSecret),
+    googleOAuth: keysPresent && enabled,
   });
 });
 
 router.get("/google", (req, res, next) => {
+  if (process.env.GOOGLE_OAUTH_ENABLED !== "true") {
+    return res.status(503).json({ error: "Google sign-in is disabled. Use email and password." });
+  }
   if (!config.googleClientId) {
     return res.status(503).json({ error: "Google OAuth not configured" });
   }
-  passport.authenticate("google", { scope: ["profile", "email"] })(req, res, next);
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+    accessType: "offline",
+  })(req, res, next);
 });
 
 router.get(
