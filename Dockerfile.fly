@@ -1,0 +1,24 @@
+FROM node:20-alpine AS builder
+WORKDIR /app
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY packages ./packages
+COPY apps ./apps
+COPY scripts ./scripts
+RUN pnpm install --frozen-lockfile || pnpm install
+RUN pnpm db:generate
+RUN pnpm --filter @certprep/shared build
+RUN pnpm --filter @certprep/database build
+RUN pnpm --filter @certprep/api build
+ARG DATABASE_URL
+ENV DATABASE_URL=${DATABASE_URL}
+RUN cd packages/database && npx prisma db push
+RUN node scripts/render-bootstrap.mjs
+
+FROM node:20-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+ENV PORT=4000
+COPY --from=builder /app /app
+EXPOSE 4000
+CMD ["node", "apps/api/dist/index.js"]

@@ -1,6 +1,6 @@
-# Render Blueprint — MockCertify API (Neon PostgreSQL)
-# 1. Deploy: https://render.com/deploy?repo=https://github.com/YashvantHange/mockcertify
-# 2. Set DATABASE_URL to your Neon connection string (GitHub secret DATABASE_URL or Neon dashboard)
+# Render — API only (Neon PostgreSQL external)
+# Deploy: https://render.com/deploy?repo=https://github.com/YashvantHange/mockcertify
+# Set DATABASE_URL in Render dashboard to your Neon connection string.
 services:
   - type: web
     name: mockcertify-api
