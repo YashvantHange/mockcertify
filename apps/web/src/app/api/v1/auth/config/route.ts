@@ -1,14 +1,11 @@
 import { NextResponse } from "next/server";
+import { hasApiProxy, proxyToApi } from "@/lib/api-proxy";
 
-/** Fallback: Google OAuth only works when the real API is proxied or deployed. */
 export async function GET() {
-  const hasGoogle =
-    Boolean(process.env.GOOGLE_CLIENT_ID) && Boolean(process.env.GOOGLE_CLIENT_SECRET);
-  const apiProxied = Boolean(
-    process.env.API_PROXY_TARGET && !process.env.API_PROXY_TARGET.includes("localhost")
-  );
+  const proxied = await proxyToApi("/auth/config");
+  if (proxied) return proxied;
   return NextResponse.json({
-    googleOAuth: hasGoogle && apiProxied,
-    apiConnected: apiProxied,
+    googleOAuth: Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET),
+    apiConnected: hasApiProxy(),
   });
 }

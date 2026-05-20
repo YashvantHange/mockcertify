@@ -66,6 +66,12 @@ await upsertEnv("NEXT_PUBLIC_API_URL", "same-origin");
 await upsertEnv("API_PROXY_TARGET", apiUrl);
 await upsertEnv("NEXT_PUBLIC_APP_URL", appUrl);
 
+// Optional: enable Google button hint on static auth/config fallback
+const googleId = process.env.GOOGLE_CLIENT_ID;
+if (googleId) {
+  await upsertEnv("GOOGLE_CLIENT_ID", googleId);
+}
+
 const deployRes = await fetch(
   `https://api.vercel.com/v13/deployments?teamId=${teamId}`,
   {

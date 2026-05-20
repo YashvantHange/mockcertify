@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { catalogCategories } from "@/data/catalog";
+import { hasApiProxy, proxyToApi } from "@/lib/api-proxy";
 
-/** Fallback when API proxy is not configured on Vercel. */
 export async function GET() {
+  const proxied = await proxyToApi("/categories");
+  if (proxied) return proxied;
   return NextResponse.json({ categories: catalogCategories });
 }
