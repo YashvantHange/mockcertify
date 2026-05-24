@@ -1,0 +1,24 @@
+FROM node:20-bookworm-slim AS builder
+WORKDIR /app
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
+COPY packages ./packages
+COPY apps/api ./apps/api
+COPY scripts ./scripts
+RUN pnpm install --prod=false --frozen-lockfile || pnpm install --prod=false
+RUN pnpm db:generate
+RUN pnpm --filter @certprep/shared build
+RUN pnpm --filter @certprep/database build
+RUN pnpm --filter @certprep/api build
+
+FROM node:20-bookworm-slim
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/packages ./packages
+COPY --from=builder /app/apps/api/dist ./apps/api/dist
+COPY --from=builder /app/apps/api/package.json ./apps/api/package.json
+COPY --from=builder /app/scripts ./scripts
+WORKDIR /app/apps/api
+EXPOSE 4000
+CMD ["node", "dist/index.js"]

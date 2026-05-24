@@ -4,6 +4,7 @@ import path from "path";
 const apiOrigin = process.env.API_PROXY_TARGET ?? process.env.NEXT_PUBLIC_API_URL;
 
 const nextConfig: NextConfig = {
+  output: process.env.HOSTINGER_BUILD === "1" ? "standalone" : undefined,
   outputFileTracingRoot: path.join(__dirname, "../../"),
   experimental: {
     optimizePackageImports: ["lucide-react", "recharts", "framer-motion"],

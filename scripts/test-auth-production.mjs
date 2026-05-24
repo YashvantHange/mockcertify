@@ -3,7 +3,10 @@
  * Usage: node scripts/test-auth-production.mjs [baseUrl]
  * Default: https://mockcertify-web.vercel.app
  */
-const BASE = (process.argv[2] ?? "https://mockcertify-web.vercel.app").replace(/\/$/, "");
+const BASE = (process.argv[2] ?? process.env.APP_URL ?? "https://mockcertify-web.vercel.app").replace(
+  /\/$/,
+  ""
+);
 const API = `${BASE}/api/v1`;
 
 const results = [];
