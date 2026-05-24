@@ -6,9 +6,9 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "generate": "prisma generate",
+    "generate": "npx prisma generate",
     "migrate": "prisma migrate dev",
-    "migrate:deploy": "prisma migrate deploy",
+    "migrate:deploy": "npx prisma migrate deploy",
     "seed": "tsx prisma/seed.ts",
     "seed:questions": "tsx prisma/seed-questions.ts",
     "seed:aws-ml": "tsx prisma/seed-aws-ml.ts",

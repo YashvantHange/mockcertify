@@ -10,7 +10,7 @@ services:
     repo: https://github.com/YashvantHange/mockcertify
     branch: master
     buildCommand: >-
-      pnpm install &&
+      pnpm install --prod=false &&
       pnpm db:generate &&
       pnpm --filter @certprep/shared build &&
       pnpm --filter @certprep/database build &&
