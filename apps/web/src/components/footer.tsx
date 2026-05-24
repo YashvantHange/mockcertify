@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { allCertifications } from "@/data/catalog";
+
+const popularCerts = allCertifications.slice(0, 8);
 
 export function Footer() {
   return (
@@ -8,25 +11,32 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-3">Product</h3>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-              <li><Link href="/categories">Certifications</Link></li>
+              <li><Link href="/categories">All certifications</Link></li>
               <li><Link href="/leaderboard">Leaderboard</Link></li>
+              <li><Link href="/signup">Sign up free</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-semibold mb-3">Popular practice exams</h3>
+            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              {popularCerts.map((cert) => (
+                <li key={cert.slug}>
+                  <Link href={`/certifications/${cert.slug}`}>{cert.name}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
             <h3 className="font-semibold mb-3">Resources</h3>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li><Link href="/community">Community</Link></li>
-              <li><Link href="/dashboard">Dashboard</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-semibold mb-3">Account</h3>
-            <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
               <li><Link href="/login">Log in</Link></li>
-              <li><Link href="/signup">Sign up</Link></li>
             </ul>
           </div>
           <div>
+            <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
+              Free IT certification practice exams with timed and practice modes.
+            </p>
             <p className="text-sm text-slate-500">© {new Date().getFullYear()} MockCertify. All rights reserved.</p>
           </div>
         </div>

@@ -38,8 +38,10 @@ export default function CategoriesPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <h1 className="text-3xl font-bold">Certification Categories</h1>
-      <p className="text-slate-600 dark:text-slate-400 mt-2">Choose your certification path</p>
+      <h1 className="text-3xl font-bold">IT Certification Practice Exams by Category</h1>
+      <p className="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
+        Browse free practice tests for cloud, cybersecurity, networking, AI, and project management certifications.
+      </p>
       {error && categories.length === 0 && (
         <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100">
           Could not load categories from the server. Refresh the page or try again in a moment.
