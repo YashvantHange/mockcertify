@@ -10,14 +10,12 @@ services:
     repo: https://github.com/YashvantHange/mockcertify
     branch: master
     buildCommand: >-
-      corepack enable &&
       pnpm install &&
       pnpm db:generate &&
       pnpm --filter @certprep/shared build &&
       pnpm --filter @certprep/database build &&
       pnpm --filter @certprep/api build &&
-      cd packages/database && npx prisma db push &&
-      cd ../.. && node scripts/render-bootstrap.mjs
+      cd packages/database && npx prisma db push
     startCommand: node apps/api/dist/index.js
     healthCheckPath: /health
     envVars:
@@ -44,4 +42,6 @@ services:
       - key: GOOGLE_CALLBACK_URL
         sync: false
       - key: GOOGLE_OAUTH_ENABLED
+        value: "true"
+      - key: RUN_DB_IMPORT
         value: "true"

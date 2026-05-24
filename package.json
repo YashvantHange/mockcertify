@@ -21,7 +21,7 @@
     "db:studio": "pnpm --filter @certprep/database studio"
   },
   "engines": {
-    "node": ">=20"
+    "node": "20.x"
   },
   "packageManager": "pnpm@9.15.0",
   "devDependencies": {
