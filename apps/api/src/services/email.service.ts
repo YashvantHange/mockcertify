@@ -11,8 +11,10 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function sendPasswordResetEmail(email: string, resetUrl: string) {
-  if (!config.smtp.user && config.nodeEnv === "development") {
-    console.log(`[DEV] Password reset for ${email}: ${resetUrl}`);
+  if (!config.smtp.user) {
+    if (config.nodeEnv === "development") {
+      console.log(`[DEV] Password reset for ${email}: ${resetUrl}`);
+    }
     return;
   }
   await transporter.sendMail({
@@ -24,8 +26,10 @@ export async function sendPasswordResetEmail(email: string, resetUrl: string) {
 }
 
 export async function sendWelcomeEmail(email: string, name: string) {
-  if (!config.smtp.user && config.nodeEnv === "development") {
-    console.log(`[DEV] Welcome email to ${name} <${email}>`);
+  if (!config.smtp.user) {
+    if (config.nodeEnv === "development") {
+      console.log(`[DEV] Welcome email to ${name} <${email}>`);
+    }
     return;
   }
   await transporter.sendMail({

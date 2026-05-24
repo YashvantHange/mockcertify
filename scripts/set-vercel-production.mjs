@@ -24,7 +24,7 @@ const authPath = join(
 const { token } = JSON.parse(readFileSync(authPath, "utf8"));
 const teamId = "team_KKhROmeOE0SchKWh3Mf2WVwH";
 const projectId = "prj_aRS7Iz3WZilepeO2TTWSrzyw8l9y";
-const appUrl = "https://mockcertify-web.vercel.app";
+const appUrl = process.argv[3]?.replace(/\/$/, "") ?? "https://mockcertify.com";
 
 const headers = {
   Authorization: `Bearer ${token}`,
@@ -65,12 +65,12 @@ async function upsertEnv(key, value, target = ["production"]) {
 await upsertEnv("NEXT_PUBLIC_API_URL", "same-origin");
 await upsertEnv("API_PROXY_TARGET", apiUrl);
 await upsertEnv("NEXT_PUBLIC_APP_URL", appUrl);
+await upsertEnv("GOOGLE_OAUTH_ENABLED", "true");
 
-// Optional: enable Google button hint on static auth/config fallback
 const googleId = process.env.GOOGLE_CLIENT_ID;
-if (googleId) {
-  await upsertEnv("GOOGLE_CLIENT_ID", googleId);
-}
+const googleSecret = process.env.GOOGLE_CLIENT_SECRET;
+if (googleId) await upsertEnv("GOOGLE_CLIENT_ID", googleId);
+if (googleSecret) await upsertEnv("GOOGLE_CLIENT_SECRET", googleSecret);
 
 const deployRes = await fetch(
   `https://api.vercel.com/v13/deployments?teamId=${teamId}`,
