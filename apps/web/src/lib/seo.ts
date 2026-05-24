@@ -13,10 +13,31 @@ export function getSiteUrl(): string {
 
 export const siteName = "MockCertify";
 
+/** Common brand spellings people type into search (Mock Certify, mock certify, etc.). */
+export const brandAlternateNames = [
+  "Mock Certify",
+  "mock certify",
+  "MockCertify.com",
+  "mockcertify.com",
+  "mockcertify",
+] as const;
+
 export const defaultDescription =
-  "Free IT certification practice exams with 8,000+ questions. Timed and practice modes for AWS, Azure, Security+, CISSP, CCNA, CKA, PMP, and more.";
+  "MockCertify (Mock Certify) offers free IT certification practice exams with 8,000+ questions. Timed and practice modes for AWS, Azure, Security+, CISSP, CCNA, CKA, PMP, and more.";
+
+export const brandKeywords = [
+  "MockCertify",
+  "Mock Certify",
+  "mock certify",
+  "mockcertify",
+  "mockcertify.com",
+  "MockCertify.com",
+  "mock certify practice exams",
+  "Mock Certify certification",
+];
 
 export const defaultKeywords = [
+  ...brandKeywords,
   "certification practice exams",
   "IT certification prep",
   "free practice tests",
@@ -28,8 +49,35 @@ export const defaultKeywords = [
   "mock certification exam",
   "timed exam simulator",
   "cloud certification study",
-  "MockCertify",
 ];
+
+export const brandFaqItems = [
+  {
+    question: "What is MockCertify?",
+    answer:
+      "MockCertify is a free online platform for IT certification practice exams. Search for MockCertify, Mock Certify, or mock certify — they all refer to mockcertify.com, where you can take timed and practice-mode exams for AWS, Azure, Security+, CISSP, CCNA, and 16+ certifications.",
+  },
+  {
+    question: "Is Mock Certify the same as MockCertify?",
+    answer:
+      "Yes. Mock Certify and mock certify are common ways people spell our brand name. The official site is https://www.mockcertify.com — one word, MockCertify.",
+  },
+  {
+    question: "Is MockCertify free?",
+    answer:
+      "Yes. MockCertify offers free certification practice exams with timed and untimed modes, detailed explanations, and progress tracking.",
+  },
+  {
+    question: "Which certifications does MockCertify cover?",
+    answer:
+      "MockCertify covers AWS, Microsoft Azure, Google Cloud, Kubernetes (CKA), CompTIA Security+, CISSP, CEH, OSCP, CCNA, Network+, Linux+, PMP, ITIL, and more—with thousands of practice questions.",
+  },
+  {
+    question: "How do timed practice exams work on MockCertify?",
+    answer:
+      "Choose a certification, pick timed or practice mode, customize question count and domains, then take the exam under realistic time limits with instant scoring and explanations.",
+  },
+] as const;
 
 type PageMetaInput = {
   title: string;
@@ -79,10 +127,17 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${url}/#organization`,
     name: siteName,
+    alternateName: [...brandAlternateNames],
     url,
     logo: `${url}/opengraph-image`,
     description: defaultDescription,
+    brand: {
+      "@type": "Brand",
+      name: siteName,
+      alternateName: [...brandAlternateNames],
+    },
     sameAs: [] as string[],
   };
 }
@@ -92,9 +147,12 @@ export function websiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${url}/#website`,
     name: siteName,
+    alternateName: [...brandAlternateNames],
     url,
     description: defaultDescription,
+    publisher: { "@id": `${url}/#organization` },
     potentialAction: {
       "@type": "SearchAction",
       target: {
@@ -110,32 +168,14 @@ export function faqJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Is MockCertify free?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. MockCertify offers free certification practice exams with timed and untimed modes, detailed explanations, and progress tracking.",
-        },
+    mainEntity: brandFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
       },
-      {
-        "@type": "Question",
-        name: "Which certifications does MockCertify cover?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "MockCertify covers AWS, Microsoft Azure, Google Cloud, Kubernetes (CKA), CompTIA Security+, CISSP, CEH, OSCP, CCNA, Network+, Linux+, PMP, ITIL, and more—with thousands of practice questions.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How do timed practice exams work?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Choose a certification, pick timed or practice mode, customize question count and domains, then take the exam under realistic time limits with instant scoring and explanations.",
-        },
-      },
-    ],
+    })),
   };
 }
 

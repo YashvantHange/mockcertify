@@ -30,6 +30,7 @@ export async function buildSitemapEntries(): Promise<SitemapEntry[]> {
     { path: "/categories", priority: 0.9, changefreq: "daily" },
     { path: "/community", priority: 0.7, changefreq: "daily" },
     { path: "/leaderboard", priority: 0.6, changefreq: "daily" },
+    { path: "/about", priority: 0.7, changefreq: "monthly" },
     { path: "/signup", priority: 0.5, changefreq: "monthly" },
     { path: "/login", priority: 0.4, changefreq: "monthly" },
   ];

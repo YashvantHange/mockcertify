@@ -11,6 +11,7 @@ import {
   getSiteUrl,
   organizationJsonLd,
   siteName,
+  websiteJsonLd,
 } from "@/lib/seo";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -18,7 +19,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: `${siteName} — Free IT Certification Practice Exams`,
+    default: `${siteName} (Mock Certify) — Free IT Certification Practice Exams`,
     template: `%s | ${siteName}`,
   },
   description: defaultDescription,
@@ -32,12 +33,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName,
-    title: `${siteName} — Free IT Certification Practice Exams`,
+    title: `${siteName} (Mock Certify) — Free IT Certification Practice Exams`,
     description: defaultDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} — Free IT Certification Practice Exams`,
+    title: `${siteName} (Mock Certify) — Free IT Certification Practice Exams`,
     description: defaultDescription,
   },
   robots: {
@@ -69,7 +70,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </Providers>
-        <JsonLd data={organizationJsonLd()} />
+        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
       </body>
     </html>
   );

@@ -11,6 +11,7 @@ import { api } from "@/lib/api";
 
 const links = [
   { href: "/categories", label: "Categories" },
+  { href: "/about", label: "About" },
   { href: "/community", label: "Community" },
   { href: "/leaderboard", label: "Leaderboard" },
 ];
@@ -45,8 +46,15 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white text-sm">
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-bold text-xl"
+          aria-label="MockCertify home — Mock Certify practice exams"
+        >
+          <span
+            className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-white text-sm"
+            aria-hidden
+          >
             MC
           </span>
           <span className="text-slate-900 dark:text-white">MockCertify</span>

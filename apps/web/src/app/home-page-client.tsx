@@ -6,6 +6,7 @@ import { ArrowRight, Star, Zap, Shield, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useApi } from "@/hooks/use-api";
+import { brandFaqItems } from "@/lib/seo";
 
 interface Certification {
   id: string;
@@ -45,12 +46,18 @@ export function HomePageClient() {
             <span className="inline-flex items-center gap-1 rounded-full bg-indigo-100 dark:bg-indigo-900/50 px-3 py-1 text-sm text-indigo-700 dark:text-indigo-300 mb-6">
               <Star size={14} className="fill-current" /> Trusted by 10,000+ learners
             </span>
+            <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 tracking-wide uppercase mb-3">
+              MockCertify · Mock Certify
+            </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white">
-              Free IT Certification{" "}
+              MockCertify — Free IT Certification{" "}
               <span className="text-indigo-600">Practice Exams</span>
             </h1>
             <p className="mt-6 text-lg text-slate-600 dark:text-slate-300">
-              100% free — practice tests, timed exams, detailed explanations, and analytics for AWS, Azure, Security+, CISSP, and 16+ certifications.
+              Whether you search for <strong className="font-medium text-slate-800 dark:text-slate-200">MockCertify</strong>,{" "}
+              <strong className="font-medium text-slate-800 dark:text-slate-200">Mock Certify</strong>, or{" "}
+              <strong className="font-medium text-slate-800 dark:text-slate-200">mock certify</strong> — welcome to the official site.
+              100% free practice tests, timed exams, and analytics for AWS, Azure, Security+, CISSP, and 16+ certifications.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/signup">
@@ -130,6 +137,27 @@ export function HomePageClient() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20" aria-labelledby="faq-heading">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 id="faq-heading" className="text-2xl font-bold text-center mb-10">
+            MockCertify FAQ
+          </h2>
+          <dl className="space-y-8">
+            {brandFaqItems.slice(0, 3).map((item) => (
+              <div key={item.question}>
+                <dt className="font-semibold text-lg text-slate-900 dark:text-white">{item.question}</dt>
+                <dd className="mt-2 text-slate-600 dark:text-slate-400">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="text-center mt-8 text-sm text-slate-500">
+            <Link href="/about" className="text-indigo-600 hover:underline">
+              More about Mock Certify →
+            </Link>
+          </p>
         </div>
       </section>
 

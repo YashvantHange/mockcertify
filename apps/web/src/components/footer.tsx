@@ -29,13 +29,15 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-3">Resources</h3>
             <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <li><Link href="/about">About MockCertify</Link></li>
               <li><Link href="/community">Community</Link></li>
               <li><Link href="/login">Log in</Link></li>
             </ul>
           </div>
           <div>
+            <p className="font-semibold text-slate-900 dark:text-white mb-1">MockCertify</p>
             <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">
-              Free IT certification practice exams with timed and practice modes.
+              Mock Certify — free IT certification practice exams at mockcertify.com. Timed and practice modes.
             </p>
             <p className="text-sm text-slate-500">© {new Date().getFullYear()} MockCertify. All rights reserved.</p>
           </div>

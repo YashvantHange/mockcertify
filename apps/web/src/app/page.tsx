@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/json-ld";
-import { faqJsonLd, pageMetadata, websiteJsonLd } from "@/lib/seo";
+import { brandKeywords, faqJsonLd, pageMetadata, siteName } from "@/lib/seo";
 import { HomePageClient } from "./home-page-client";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Free IT Certification Practice Exams",
+  title: `${siteName} (Mock Certify) — Free IT Certification Practice Exams`,
   description:
-    "Practice and pass AWS, Azure, Security+, CISSP, CCNA, and 16+ IT certifications with 8,000+ free questions, timed exams, and detailed explanations.",
+    "Looking for Mock Certify or mock certify? MockCertify is the official free site for IT certification practice exams — 8,000+ questions for AWS, Azure, Security+, CISSP, CCNA, and more.",
   path: "/",
   keywords: [
+    ...brandKeywords,
     "free certification practice exams",
     "IT certification practice test",
     "AWS SAA practice exam",
@@ -20,7 +21,7 @@ export const metadata: Metadata = pageMetadata({
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={[websiteJsonLd(), faqJsonLd()]} />
+      <JsonLd data={faqJsonLd()} />
       <HomePageClient />
     </>
   );
