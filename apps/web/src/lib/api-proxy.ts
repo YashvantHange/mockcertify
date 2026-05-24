@@ -1,6 +1,23 @@
 import { NextResponse } from "next/server";
 
-const apiOrigin = process.env.API_PROXY_TARGET?.replace(/\/$/, "");
+const PRODUCTION_API = "https://mockcertify-api.onrender.com";
+
+function resolveApiOrigin(): string | undefined {
+  const explicit = process.env.API_PROXY_TARGET?.replace(/\/$/, "");
+  if (
+    explicit &&
+    !explicit.includes("localhost") &&
+    !explicit.includes("trycloudflare.com")
+  ) {
+    return explicit;
+  }
+  if (process.env.VERCEL || process.env.NODE_ENV === "production") {
+    return PRODUCTION_API;
+  }
+  return explicit || undefined;
+}
+
+const apiOrigin = resolveApiOrigin();
 
 export function hasApiProxy() {
   return Boolean(apiOrigin && !apiOrigin.includes("localhost"));

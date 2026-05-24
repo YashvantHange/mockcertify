@@ -30,9 +30,9 @@ services:
       - key: JWT_REFRESH_SECRET
         generateValue: true
       - key: CLIENT_URL
-        value: https://mockcertify-web.vercel.app
+        value: https://mockcertify.com
       - key: ALLOWED_ORIGINS
-        value: https://mockcertify-web.vercel.app
+        value: https://mockcertify.com,https://www.mockcertify.com,https://mockcertify-web.vercel.app
       - key: ADMIN_PASSWORD
         value: Admin123!@#
       - key: GOOGLE_CLIENT_ID
