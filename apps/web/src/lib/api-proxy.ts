@@ -4,13 +4,16 @@ const PRODUCTION_API = "https://mockcertify-api.onrender.com";
 
 function resolveApiOrigin(): string | undefined {
   const explicit = process.env.API_PROXY_TARGET?.replace(/\/$/, "");
-  if (
+  const explicitOk =
     explicit &&
     !explicit.includes("localhost") &&
-    !explicit.includes("trycloudflare.com")
-  ) {
-    return explicit;
-  }
+    !explicit.includes("trycloudflare.com") &&
+    (explicit.includes("onrender.com") ||
+      explicit.includes("fly.dev") ||
+      explicit.includes("mockcertify.com"));
+
+  if (explicitOk) return explicit;
+
   if (process.env.VERCEL || process.env.NODE_ENV === "production") {
     return PRODUCTION_API;
   }
