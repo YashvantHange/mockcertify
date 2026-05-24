@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Star, Zap, Shield, BarChart3 } from "lucide-react";
+import { ArrowRight, Zap, Shield, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useApi } from "@/hooks/use-api";
@@ -16,12 +16,6 @@ interface Certification {
   description: string;
   _count?: { questions: number };
 }
-
-const testimonials = [
-  { name: "Sarah M.", role: "AWS SAA Certified", text: "MockCertify helped me pass SAA-C03 on my first attempt. The timed mode was invaluable." },
-  { name: "James K.", role: "Security+ Certified", text: "Weak area analysis pinpointed exactly what I needed to study. Highly recommend." },
-  { name: "Priya R.", role: "Azure AZ-900", text: "Clean UI, great explanations, and the community discussions clarified tough concepts." },
-];
 
 const features = [
   { icon: Zap, title: "Timed & Practice Modes", desc: "Simulate real exam conditions or learn at your own pace." },
@@ -43,9 +37,6 @@ export function HomePageClient() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-flex items-center gap-1 rounded-full bg-indigo-100 dark:bg-indigo-900/50 px-3 py-1 text-sm text-indigo-700 dark:text-indigo-300 mb-6">
-              <Star size={14} className="fill-current" /> Trusted by 10,000+ learners
-            </span>
             <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 tracking-wide uppercase mb-3">
               MockCertify · Mock Certify
             </p>
@@ -120,26 +111,6 @@ export function HomePageClient() {
         </div>
       </section>
 
-      <section className="py-20 bg-slate-100 dark:bg-slate-900/50" aria-labelledby="testimonials">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 id="testimonials" className="text-2xl font-bold text-center mb-12">What learners say</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <Card key={t.name}>
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">&ldquo;{t.text}&rdquo;</p>
-                <p className="font-semibold text-sm">{t.name}</p>
-                <p className="text-xs text-slate-500">{t.role}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-20" aria-labelledby="faq-heading">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 id="faq-heading" className="text-2xl font-bold text-center mb-10">
@@ -164,7 +135,7 @@ export function HomePageClient() {
       <section className="py-20 bg-indigo-600">
         <div className="mx-auto max-w-3xl px-4 text-center">
           <h2 className="text-3xl font-bold text-white">Ready to pass your exam?</h2>
-          <p className="mt-4 text-indigo-100">Join thousands of professionals preparing with MockCertify.</p>
+          <p className="mt-4 text-indigo-100">Start practicing free with timed exams and detailed explanations.</p>
           <Link href="/signup" className="inline-block mt-8">
             <Button size="lg" variant="secondary" className="bg-white text-indigo-600 hover:bg-indigo-50">
               Create free account
