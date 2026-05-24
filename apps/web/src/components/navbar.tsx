@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 import { api } from "@/lib/api";
 
 const links = [
-  { href: "/categories", label: "Categories" },
-  { href: "/about", label: "About" },
+  { href: "/", label: "Home" },
   { href: "/community", label: "Community" },
   { href: "/leaderboard", label: "Leaderboard" },
+  { href: "/about", label: "About" },
 ];
 
 export function Navbar() {
