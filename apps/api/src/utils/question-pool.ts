@@ -10,9 +10,11 @@ async function queryRandomIds(
   const domainIds = filters?.domainIds;
   const hasExclude = excludeIds.length > 0;
 
+  const toIds = (rows: { id: string }[]) => rows.map((r) => r.id);
+
   if (difficulty && domainIds?.length) {
     if (hasExclude) {
-      return prisma.$queryRaw<{ id: string }[]>`
+      return toIds(await prisma.$queryRaw<{ id: string }[]>`
         SELECT id FROM "Question"
         WHERE "certificationId" = ${certificationId}
           AND "isActive" = true
@@ -21,9 +23,9 @@ async function queryRandomIds(
           AND id NOT IN (${Prisma.join(excludeIds)})
         ORDER BY RANDOM()
         LIMIT ${count}
-      `;
+      `);
     }
-    return prisma.$queryRaw<{ id: string }[]>`
+    return toIds(await prisma.$queryRaw<{ id: string }[]>`
       SELECT id FROM "Question"
       WHERE "certificationId" = ${certificationId}
         AND "isActive" = true
@@ -31,12 +33,12 @@ async function queryRandomIds(
         AND "domainId" IN (${Prisma.join(domainIds)})
       ORDER BY RANDOM()
       LIMIT ${count}
-    `;
+    `);
   }
 
   if (difficulty) {
     if (hasExclude) {
-      return prisma.$queryRaw<{ id: string }[]>`
+      return toIds(await prisma.$queryRaw<{ id: string }[]>`
         SELECT id FROM "Question"
         WHERE "certificationId" = ${certificationId}
           AND "isActive" = true
@@ -44,21 +46,21 @@ async function queryRandomIds(
           AND id NOT IN (${Prisma.join(excludeIds)})
         ORDER BY RANDOM()
         LIMIT ${count}
-      `;
+      `);
     }
-    return prisma.$queryRaw<{ id: string }[]>`
+    return toIds(await prisma.$queryRaw<{ id: string }[]>`
       SELECT id FROM "Question"
       WHERE "certificationId" = ${certificationId}
         AND "isActive" = true
         AND difficulty = ${difficulty}::"Difficulty"
       ORDER BY RANDOM()
       LIMIT ${count}
-    `;
+    `);
   }
 
   if (domainIds?.length) {
     if (hasExclude) {
-      return prisma.$queryRaw<{ id: string }[]>`
+      return toIds(await prisma.$queryRaw<{ id: string }[]>`
         SELECT id FROM "Question"
         WHERE "certificationId" = ${certificationId}
           AND "isActive" = true
@@ -66,36 +68,36 @@ async function queryRandomIds(
           AND id NOT IN (${Prisma.join(excludeIds)})
         ORDER BY RANDOM()
         LIMIT ${count}
-      `;
+      `);
     }
-    return prisma.$queryRaw<{ id: string }[]>`
+    return toIds(await prisma.$queryRaw<{ id: string }[]>`
       SELECT id FROM "Question"
       WHERE "certificationId" = ${certificationId}
         AND "isActive" = true
         AND "domainId" IN (${Prisma.join(domainIds)})
       ORDER BY RANDOM()
       LIMIT ${count}
-    `;
+    `);
   }
 
   if (hasExclude) {
-    return prisma.$queryRaw<{ id: string }[]>`
+    return toIds(await prisma.$queryRaw<{ id: string }[]>`
       SELECT id FROM "Question"
       WHERE "certificationId" = ${certificationId}
         AND "isActive" = true
         AND id NOT IN (${Prisma.join(excludeIds)})
       ORDER BY RANDOM()
       LIMIT ${count}
-    `;
+    `);
   }
 
-  return prisma.$queryRaw<{ id: string }[]>`
+  return toIds(await prisma.$queryRaw<{ id: string }[]>`
     SELECT id FROM "Question"
     WHERE "certificationId" = ${certificationId}
       AND "isActive" = true
     ORDER BY RANDOM()
     LIMIT ${count}
-  `;
+  `);
 }
 
 /**
@@ -111,7 +113,7 @@ export async function pickRandomQuestionIds(
 
   if (excludeIds.length > 0) {
     const fresh = await queryRandomIds(certificationId, count, excludeIds, filters);
-    for (const row of fresh) picked.add(row.id);
+    for (const id of fresh) picked.add(id);
   }
 
   if (picked.size < count) {
@@ -123,7 +125,7 @@ export async function pickRandomQuestionIds(
       fallbackExclude.length > 0 ? fallbackExclude : [],
       filters
     );
-    for (const row of more) picked.add(row.id);
+    for (const id of more) picked.add(id);
   }
 
   return [...picked];
