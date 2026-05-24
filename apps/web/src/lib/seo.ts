@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 
-/** Canonical site URL (no trailing slash). */
+const CANONICAL_SITE_URL = "https://www.mockcertify.com";
+
+/** Canonical site URL (no trailing slash). Prefer mockcertify.com over vercel.app for SEO. */
 export function getSiteUrl(): string {
   const url = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
-  if (url && url.startsWith("http")) return url;
-  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  return "https://www.mockcertify.com";
+  if (url && url.startsWith("http") && url.includes("mockcertify.com")) {
+    return url;
+  }
+  return CANONICAL_SITE_URL;
 }
 
 export const siteName = "MockCertify";
